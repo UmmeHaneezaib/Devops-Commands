@@ -1,0 +1,27 @@
+Steps for Github trigger
+1)configure jenkins via docker images
+docker run -d --name jenkins-ci -p 8080:8080 jenkins/jenkins:lts(create and run jenkins container)
+http:///your-ip-addr:8080(Type in browser)
+docker exec -i jenkins-ci cat /var/jenkins_home/secrets/initialAdminPassword
+(for getting password)
+2)ManageJenkins-->Configure System-->Git-->Advance-->SpecifyHookurl-->Copy that URL
+3)In git hub repo paste url Settings-->Webhook-->addUrl
+4)Create Jenkins pipeline with configurations
+Select github Project paste url of repo
+select githubhook trigger option
+select pipeline with SCM and do the rest settings
+save and Apply
+Note-Whenever changes are done build is automatically created
+------------------------------------------------------------------------------
+BAsic Jenkinsfile
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}

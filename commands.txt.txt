@@ -1,0 +1,17 @@
+1) ls -1 = lists everything in a hierarchical way (Alphabetical Order)
+2) ls -a = lists the hidden files as well
+3) ls -l = list the attributes of a file 
+file type,File Permission(rwx),No of hard links to the file(referring files),File ownwer,File Group,
+Size of File(Bytes),Date and Time,File Name
+4) head <filename> = displays the first 10 lines of the file
+5) tail <filename> = displays the last 10 lines of the file
+6) Change file permission commands 2 ways
+a) $chmod [ugo] [+-] [permission type] [file/directory]
+b) octal Mode (0-7)
+ex -   rwx  r   x
+chmod 7(u)4(g)1(o) <filename> 
+r - 4   | 0 = - - -  | 4 = r - -
+w - 2   | 1 = - - x  | 5 = r - x
+x - 1   | 2 = - w -  | 6 = r w - (Permissions)
+        | 3 = - w x  | 7 = r w x
+                     
